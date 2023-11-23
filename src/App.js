@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
 
 function App() {
+  // задание https://sinyakov.com/frontend/react/hw/profi.png
+  // допилить можно вот до такого функционала - https://cssgradient.io/
+  const [firstColor, setFirstColor] = useState("");
+  const [secondColor, setSecondColor] = useState("");
+
+  function changeGradient() {
+    // функция будет менять свойство background-color
+    // у элемента body
+    // linear-gradient(0deg, #ffff00 40%, #000044 100%)
+    document.body.style.backgroundImage =
+      "linear-gradient(0deg, " + firstColor + " 0%, " + secondColor + " 100%)";
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <input
+          className="input"
+          value={secondColor}
+          onChange={(e) => setSecondColor(e.target.value)}
+        />
+        <input
+          className="input"
+          value={firstColor}
+          onChange={(e) => setFirstColor(e.target.value)}
+        />
+        <button onClick={changeGradient}>go</button>
+      </div>
     </div>
   );
 }
