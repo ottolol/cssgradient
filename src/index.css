@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -15,6 +19,20 @@ code {
 
 .container {
   padding: 10px;
+}
+
+.block {
+  display: inline-block;
+}
+
+label {
+  display: block;
+  margin: 5px 0;
+  font-weight: bold;
+  font-size: 12px;
+  color: #bbadad;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .input {
